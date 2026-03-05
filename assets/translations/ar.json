@@ -1,0 +1,15 @@
+{
+    "Login":"سجل دخول",
+    "order now":"احجز كتابك الان!",
+     "Register":"تسجيل حسابي",
+         "Welcome back":"أهلاً بعودتك! سعدت برؤيتك مجدداً!",
+          "enter email":"أدخل بريدك الإلكتروني",
+             "enter password":"أدخل كلمة المرور الخاصة بك",
+               "Or":"أو",
+               "Sign in with Google":"قم بتسجيل الدخول باستخدام جوجل",
+                "Sign in with Apple":"تسجيل الدخول مع أبل",
+                   "Already have an account?":"هل لديك حساب بالفعل؟",
+                     "Don’t have an account? ":"ليس لديك حساب؟",
+                      " Register Now":"سجل الآن",
+                       "Forgot Password?":"نسيت الباسورد"
+}  
