@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/features/register_auth/ui/register_auth_screen.dart';
 import 'package:flutter_application_1/features/welcome/ui/welcom-screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

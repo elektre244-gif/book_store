@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomLoginAppbar extends StatelessWidget {
-  const CustomLoginAppbar({super.key});
+class CustomAppbarIcon extends StatelessWidget {
+  const CustomAppbarIcon({super.key});
 
   @override
   Widget build(BuildContext context) {

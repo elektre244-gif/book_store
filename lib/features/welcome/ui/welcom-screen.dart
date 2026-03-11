@@ -2,7 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/them/app_constans.dart';
 import 'package:flutter_application_1/core/widgets/app_bottom.dart';
-import 'package:flutter_application_1/features/authentication/ui/authentication_screen.dart';
+import 'package:flutter_application_1/features/login_auth/ui/login_auth_screen.dart';
+import 'package:flutter_application_1/features/register_auth/ui/register_auth_screen.dart';
 import 'package:flutter_application_1/features/welcome/ui/widgets/custom_logo_and_icon.dart';
 import 'package:flutter_application_1/gen/assets.gen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -34,7 +35,7 @@ class WelcomScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => AuthenticationScreen(),
+                    builder: (context) => LoginAuthScreen(),
                   ),
                 );
               },
@@ -44,6 +45,14 @@ class WelcomScreen extends StatelessWidget {
               data: "Register".tr(),
               textColor: AppConstans.blackColor,
               bottmColor: AppConstans.secondColor,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => RegisterAuthScreen(),
+                  ),
+                );
+              },
             ),
           ],
         ),

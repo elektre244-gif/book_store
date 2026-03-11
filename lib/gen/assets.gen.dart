@@ -32,6 +32,9 @@ AssetGenImage get apple_icon =>
 //File path: assets/images/google_icon.jpg
 AssetGenImage get google_icon =>
       const AssetGenImage('assets/images/google_icon.png');
+//File path: assets/images/success_icon.jpg
+AssetGenImage get success_mark =>
+      const AssetGenImage('assets/images/successmark.png');
   /// List of all assets
   List<AssetGenImage> get values => [
     splash1,

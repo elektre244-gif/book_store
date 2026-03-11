@@ -11,5 +11,31 @@
     "Already have an account?":"Already have an account?",
     "Don’t have an account? ":"Don’t have an account?",
     " Register Now":" Register Now",
-    "Forgot Password?":"Forgot Password?"
+    "Forgot Password?":"Forgot Password?",
+    "Hello! Register":"Hello! Register to get started",
+    "Username":"Username",
+    "Confirm password":"Confirm password",
+    "Login Now":"Login Now",
+    "Email":"Email",
+    "Password":"Password",
+    "Don't worry":"Don't worry! It occurs. Please enter the email address linked with your account.",
+    "Send Code":"Send Code",
+    "OTP Verification":"OTP Verification",
+    "Enter the verification":"Enter the verification code we just sent on your email address.",
+    "Verify":"Verify",
+    "Didn’t received code? ":"Didn’t received code? ",
+    "Resend ":"Resend ",
+    "Create new password":"Create new password",
+    "Your new password":"Your new password must be unique from those previously used.",
+    "New Password":"New Password",
+    "Confirm Password":"Confirm Password",
+    "Reset Password":"Reset Password",
+    "Password Changed!":"Password Changed!",
+    "Your password has been changed successfully.":"Your password has been changed successfully.",
+    "Back to Login":"Back to Login"
+
+
+
+    
+    
 }

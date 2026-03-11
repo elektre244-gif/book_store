@@ -11,6 +11,9 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onTapOutside: (v) {
+        FocusScope.of(context).unfocus();
+      },
       controller:controller ,
       decoration: InputDecoration(
         label:Text(data.tr()),
@@ -20,7 +23,10 @@ class CustomTextFormField extends StatelessWidget {
           fontSize: 15.sp,
           color: Color(0xff8391A1)
         ),
-        suffix: suffix,
+        suffixIcon: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: suffix,
+        ),
         enabledBorder:OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
           borderSide: BorderSide(
