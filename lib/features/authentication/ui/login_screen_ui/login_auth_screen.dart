@@ -10,7 +10,6 @@ import 'package:flutter_application_1/features/authentication/ui/login_screen_ui
 import 'package:flutter_application_1/core/widgets/custom_appbar_icon.dart';
 import 'package:flutter_application_1/features/authentication/ui/login_screen_ui/widgets/custom_password_text.dart';
 import 'package:flutter_application_1/core/widgets/custom_text_row_to_register.dart';
-import 'package:flutter_application_1/features/home_screen/ui/home_screen.dart';
 import 'package:flutter_application_1/gen/assets.gen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -28,7 +28,12 @@ class AppRoutes {
           ),
         );
       case RoutesScreens.registerScreen:
-        return MaterialPageRoute(builder: (_) => RegisterAuthScreen());
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => AuthenticationCubit(),
+            child: RegisterAuthScreen(),
+          ),
+        );
       case RoutesScreens.forgetPasswordScreen:
         return MaterialPageRoute(builder: (_) => ForgetPasswordScreen());
       case RoutesScreens.creatPasswordScreen:

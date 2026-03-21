@@ -5,7 +5,6 @@ import 'package:flutter_application_1/core/them/app_constans.dart';
 import 'package:flutter_application_1/core/widgets/app_bottom.dart';
 import 'package:flutter_application_1/core/widgets/custom_appbar_icon.dart';
 import 'package:flutter_application_1/core/widgets/custom_text_row_to_register.dart';
-import 'package:flutter_application_1/features/authentication/ui/creat_password_screen_ui/creat_password_screen_ui.dart';
 import 'package:flutter_application_1/features/authentication/ui/otp_screen_ui/widgets/custom_contanier_item_otp.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
