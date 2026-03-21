@@ -1,8 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/core/routs/routes_screens.dart';
 import 'package:flutter_application_1/core/them/app_constans.dart';
 import 'package:flutter_application_1/core/widgets/app_bottom.dart';
-import 'package:flutter_application_1/features/login_auth/ui/login_auth_screen.dart';
+import 'package:flutter_application_1/features/authentication/ui/login_screen_ui/login_auth_screen.dart';
 import 'package:flutter_application_1/gen/assets.gen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -25,7 +26,7 @@ class PasswordSuccessfulScreen extends StatelessWidget {
               SizedBox(height: 40.h,),
               AppBottom(data:   "Back to Login".tr(), bottmColor: AppConstans.primaryColor, textColor: AppConstans.secondColor,
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginAuthScreen()));
+                Navigator.pushNamed(context, RoutesScreens.loginScreen);
               },)
             ],
           ),

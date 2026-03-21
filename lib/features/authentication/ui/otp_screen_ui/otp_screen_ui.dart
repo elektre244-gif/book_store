@@ -1,11 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/core/routs/routes_screens.dart';
 import 'package:flutter_application_1/core/them/app_constans.dart';
 import 'package:flutter_application_1/core/widgets/app_bottom.dart';
 import 'package:flutter_application_1/core/widgets/custom_appbar_icon.dart';
 import 'package:flutter_application_1/core/widgets/custom_text_row_to_register.dart';
-import 'package:flutter_application_1/features/creat_password_screen/ui/creat_password_screen.dart';
-import 'package:flutter_application_1/features/otp_screen/ui/widgets/custom_contanier_item_otp.dart';
+import 'package:flutter_application_1/features/authentication/ui/creat_password_screen_ui/creat_password_screen_ui.dart';
+import 'package:flutter_application_1/features/authentication/ui/otp_screen_ui/widgets/custom_contanier_item_otp.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OtpScreen extends StatelessWidget {
@@ -50,7 +51,7 @@ class OtpScreen extends StatelessWidget {
               SizedBox(height: 35.h,),
               AppBottom(data:"Verify".tr() , bottmColor:AppConstans.primaryColor, textColor: AppConstans.secondColor,
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>CreatPasswordScreen()));
+                Navigator.pushNamed(context, RoutesScreens.creatPasswordScreen);
               },),
               SizedBox(height: 350.h,),
               CustomTextRowToRegister(data: "Resend ", data2: "Didn’t received code? " ,)

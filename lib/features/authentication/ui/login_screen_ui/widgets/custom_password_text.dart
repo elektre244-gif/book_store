@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/forget_password_screen/ui/forget_password_screen.dart';
+import 'package:flutter_application_1/features/authentication/ui/forget_password_screen_ui/forget_password_screen_ui.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomPasswordText extends StatelessWidget {

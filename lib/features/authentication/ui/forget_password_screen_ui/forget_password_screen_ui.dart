@@ -1,12 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_application_1/core/routs/routes_screens.dart';
 import 'package:flutter_application_1/core/them/app_constans.dart';
 import 'package:flutter_application_1/core/widgets/app_bottom.dart';
 import 'package:flutter_application_1/core/widgets/custom_appbar_icon.dart';
 import 'package:flutter_application_1/core/widgets/custom_text_form_field.dart';
 import 'package:flutter_application_1/core/widgets/custom_text_row_to_register.dart';
-import 'package:flutter_application_1/features/otp_screen/ui/otp_screen.dart';
+import 'package:flutter_application_1/features/authentication/ui/otp_screen_ui/otp_screen_ui.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
@@ -44,7 +45,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                 SizedBox(height: 38.sp),
                 AppBottom(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>OtpScreen()));
+                    Navigator.pushNamed(context, RoutesScreens.otpScreen);
                   },
                   data: "Send Code",
                   bottmColor: AppConstans.primaryColor,

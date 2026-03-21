@@ -1,10 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/core/routs/routes_screens.dart';
 import 'package:flutter_application_1/core/them/app_constans.dart';
 import 'package:flutter_application_1/core/widgets/app_bottom.dart';
 import 'package:flutter_application_1/core/widgets/custom_appbar_icon.dart';
 import 'package:flutter_application_1/core/widgets/custom_text_form_field.dart';
-import 'package:flutter_application_1/features/password_successfull/ui/password_successful_screen.dart';
+import 'package:flutter_application_1/features/authentication/ui/password_success_screen_ui/password_successful_screen_ui.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CreatPasswordScreen extends StatelessWidget {
@@ -37,7 +38,7 @@ class CreatPasswordScreen extends StatelessWidget {
                   SizedBox(height: 38.h,),
                   AppBottom(data:  "Reset Password".tr(), bottmColor: AppConstans.primaryColor, textColor: AppConstans.secondColor,
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>PasswordSuccessfulScreen()));
+                    Navigator.pushNamed(context, RoutesScreens.passwordSuccessScreen);
                   },)
               ],
             ),

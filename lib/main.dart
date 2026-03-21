@@ -9,6 +9,7 @@ void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(
+    
     EasyLocalization(
       supportedLocales: [Locale('en'), Locale('ar')],
       path: 'assets/translations', 
