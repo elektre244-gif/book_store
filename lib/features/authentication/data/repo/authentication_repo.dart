@@ -1,23 +1,21 @@
-import 'package:dio/dio.dart';
+import 'package:flutter_application_1/core/api_serveces/api_constans.dart';
+import 'package:flutter_application_1/core/api_serveces/dio_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthenticationRepo {
-  static Dio dio = Dio();
-  static Dio dio1 = Dio();
   static login({required String email, required String password}) async {
     try {
-      final response = await dio.post(
-        "https://codingarabic.online/api/login",
+      final response = await DioHelper.dio?.post(
+        ApiConstans.login,
         data: {"email": email, "password": password},
       );
-      if (response.statusCode == 200) {
-        savedUserToken(token: response.data["token"]);
+      if (response?.statusCode == 200||response?.statusCode==201) {
+        savedUserToken(token: response?.data["token"]);
         return true;
       } else {
         return false;
       }
     } catch (e) {
-      print("===============-===-===-===-=-52");
       return false;
     }
   }
@@ -29,8 +27,8 @@ class AuthenticationRepo {
     required String passwordConfirmation,
   }) async {
     try {
-      final registerResponse = await dio1.post(
-        "https://codingarabic.online/api/register",
+      final registerResponse = await DioHelper.dio?.post(
+        ApiConstans.rigester,
         data: {
           "name": name,
           "email": email,
@@ -38,15 +36,14 @@ class AuthenticationRepo {
           "password_confirmation": passwordConfirmation,
         },
       );
-      if (registerResponse.statusCode == 200 ||
-          registerResponse.statusCode == 201) {
-        savedUserToken(token: registerResponse.data["token"]);
+      if (registerResponse?.statusCode == 200 ||
+          registerResponse?.statusCode == 201) {
+        savedUserToken(token: registerResponse?.data["token"]);
         return true;
       } else {
         return false;
       }
     } catch (e) {
-      print("=======================================");
       return false;
     }
   }

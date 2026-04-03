@@ -8,6 +8,7 @@ import 'package:flutter_application_1/core/widgets/custom_appbar_icon.dart';
 import 'package:flutter_application_1/core/widgets/custom_text_form_field.dart';
 import 'package:flutter_application_1/core/widgets/custom_text_row_to_register.dart';
 import 'package:flutter_application_1/features/authentication/cubit/authentication_cubit.dart';
+import 'package:flutter_application_1/features/authentication/ui/register_screen_ui/widgets/auth_bloc_listener_register.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -49,11 +50,16 @@ class _RegisterAuthScreenState extends State<RegisterAuthScreen> {
                 SizedBox(height: 28.h),
                 Text("Hello! Register".tr(), style: TextStyle(fontSize: 30.sp)),
                 SizedBox(height: 32.h),
-                CustomTextFormField(data: "Username".tr()),
-                SizedBox(height: 11.h),
-                CustomTextFormField(data: "Email".tr()),
+                CustomTextFormField(
+                  controller: nameController,
+                  data: "Username".tr()),
                 SizedBox(height: 11.h),
                 CustomTextFormField(
+                  controller: emailController,
+                  data: "Email".tr()),
+                SizedBox(height: 11.h),
+                CustomTextFormField(
+                  controller: passwordController,
                   data: "Password".tr(),
                   suffix: Padding(
                     padding: const EdgeInsets.all(0.5),
@@ -65,6 +71,7 @@ class _RegisterAuthScreenState extends State<RegisterAuthScreen> {
                 ),
                 SizedBox(height: 11.h),
                 CustomTextFormField(
+                  controller: confirmPasswordController,
                   data: "Confirm password".tr(),
                   suffix: Padding(
                     padding: const EdgeInsets.all(0.5),
@@ -75,57 +82,17 @@ class _RegisterAuthScreenState extends State<RegisterAuthScreen> {
                   ),
                 ),
                 SizedBox(height: 30.h),
-               
-                    BlocListener<AuthenticationCubit, AuthenticationState>(
-                      listener: (context, state) {
-                        if (state is AuthenticationLoadingState) {
-                          showDialog(
-                            context: context,
-                            builder: (context) => Center(
-                              child: CircularProgressIndicator(
-                                color: AppConstans.primaryColor,
-                              ),
-                            ),
-                          );
-                        } else if (state is AuthenticationSuccessesState) {
-                          Navigator.pushNamedAndRemoveUntil(
-                            context,
-                            RoutesScreens.homeScreen,
-                            (route) => false,
-                          );
-                        } else if (state is AuthenticationErorState) {
-                          Navigator.pop(context);
-                          showDialog(
-                            context: context,
-                            builder: (context) => AlertDialog(
-                              title: Text("Error"),
-                              content: Text("Error Please try again"),
-                            ),
-                          );
-                        }
-                      },
-                      child: AppBottom(
-                      
-                        data: "Register",
-                        bottmColor: AppConstans.primaryColor,
-                        textColor: AppConstans.secondColor,
-                          onTap: () {
-                          context.read<AuthenticationCubit>().register(
-                            email: emailController.text,
-                            password: passwordController.text,
-                            name: nameController.text,
-                            passwordConfirmation: confirmPasswordController.text,
-                          );
-                        },
-                      ),
-                    ),
-                    SizedBox(height: 190.h),
-                    CustomTextRowToRegister(
-                      data: "Login Now",
-                      data2: "Don’t have an account? ",
-                    ),
-                  
-                
+
+              AuthBlocListenerRegister(
+                name: nameController, 
+                email: emailController, 
+                password: passwordController, 
+                confirmPassword: confirmPasswordController),
+                SizedBox(height: 190.h),
+                CustomTextRowToRegister(
+                  data: "Login Now",
+                  data2: "Don’t have an account? ",
+                ),
               ],
             ),
           ),

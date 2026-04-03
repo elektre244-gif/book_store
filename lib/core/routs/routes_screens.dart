@@ -6,5 +6,5 @@ class RoutesScreens {
   static const String forgetPasswordScreen="forgetPasswordScreen";
   static const String otpScreen="otpScreen";
   static const String passwordSuccessScreen="passwordSuccessScreen";
-  static const String homeScreen="homeScreen";
+  static const String bottomNavBar="BottomNavBar";
 }

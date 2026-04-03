@@ -1,17 +1,14 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/core/routs/routes_screens.dart';
 import 'package:flutter_application_1/core/them/app_constans.dart';
-import 'package:flutter_application_1/core/widgets/app_bottom.dart';
 import 'package:flutter_application_1/core/widgets/app_bottom_with_logo.dart';
 import 'package:flutter_application_1/core/widgets/custom_text_form_field.dart';
-import 'package:flutter_application_1/features/authentication/cubit/authentication_cubit.dart';
+import 'package:flutter_application_1/features/authentication/ui/login_screen_ui/widgets/auth_bloc_listener.dart';
 import 'package:flutter_application_1/features/authentication/ui/login_screen_ui/widgets/custom_divider.dart';
 import 'package:flutter_application_1/core/widgets/custom_appbar_icon.dart';
 import 'package:flutter_application_1/features/authentication/ui/login_screen_ui/widgets/custom_password_text.dart';
 import 'package:flutter_application_1/core/widgets/custom_text_row_to_register.dart';
 import 'package:flutter_application_1/gen/assets.gen.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginAuthScreen extends StatefulWidget {
@@ -47,9 +44,12 @@ class _LoginAuthScreenState extends State<LoginAuthScreen> {
                 SizedBox(height: 29.h),
                 Text("Welcome back".tr(), style: TextStyle(fontSize: 30.sp)),
                 SizedBox(height: 32.h),
-                CustomTextFormField(data: "enter email".tr()),
+                CustomTextFormField(
+                  controller: emailController,
+                  data: "enter email".tr()),
                 SizedBox(height: 15),
                 CustomTextFormField(
+                  controller: passwordController,
                   data: "enter password".tr(),
                   suffix: Padding(
                     padding: const EdgeInsets.all(0.5),
@@ -62,45 +62,9 @@ class _LoginAuthScreenState extends State<LoginAuthScreen> {
                 SizedBox(height: 13.h),
                 CustomPasswordText(),
                 SizedBox(height: 30.h),
-                BlocListener<AuthenticationCubit, AuthenticationState>(
-                  listener: (context, state) {
-                    if (state is AuthenticationLoadingState) {
-                      showDialog(
-                        context: context,
-                        builder: (context) => Center(
-                          child: CircularProgressIndicator(
-                            color: AppConstans.primaryColor,
-                          ),
-                        ),
-                      );
-                    } else if (state is AuthenticationSuccessesState) {
-                      Navigator.pushNamedAndRemoveUntil(
-                        context,
-                        RoutesScreens.homeScreen,
-                        (route) => false,
-                      );
-                    } else if (state is AuthenticationErorState) {
-                      Navigator.pop(context);
-                      showDialog(
-                        context: context,
-                        builder: (context) => AlertDialog(
-                          title: Text("Error"),
-                          content: Text("Error Please try again"),
-                        ),
-                      );
-                    }
-                  },
-                  child: AppBottom(
-                    data: "Login".tr(),
-                    bottmColor: AppConstans.primaryColor,
-                    textColor: AppConstans.secondColor,
-                    onTap: () {
-                      context.read<AuthenticationCubit>().login(
-                        email: emailController.text,
-                        password: passwordController.text,
-                      );
-                    },
-                  ),
+                AuthBlocListener(
+                  email: emailController,
+                  password: passwordController,
                 ),
                 SizedBox(height: 34.h),
                 CustomDivider(),
