@@ -9,7 +9,7 @@ import 'package:flutter_application_1/features/authentication/ui/password_succes
 import 'package:flutter_application_1/features/authentication/ui/register_screen_ui/register_auth_screen.dart'
     as Routes;
 import 'package:flutter_application_1/features/authentication/ui/register_screen_ui/register_auth_screen.dart';
-import 'package:flutter_application_1/features/bottom_navigation_bar/ui/bottom_nav_bar/bottom_navigatin_bar_screens.dart';
+import 'package:flutter_application_1/features/bottom_navigation_bar/ui/bottom_navigatin_bar_screens.dart';
 import 'package:flutter_application_1/features/welcome/ui/welcom-screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../features/authentication/ui/login_screen_ui/login_auth_screen.dart'
