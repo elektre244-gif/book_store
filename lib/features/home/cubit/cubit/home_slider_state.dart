@@ -12,3 +12,11 @@ final class SliderSuccessState extends HomeSliderState {
 }
 final class SliderErrrorState extends HomeSliderState {}
 
+final class SuccessBestProductState extends HomeSliderState {
+  final List<Product>? product;
+
+  SuccessBestProductState( this.product);
+
+}
+final class ErrorBestProductState extends HomeSliderState {}
+

@@ -2,33 +2,43 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomTextFormField extends StatelessWidget {
+class CustomTextFormField extends StatefulWidget {
   final Widget? suffix;
   final   String data;
   final TextEditingController? controller;
-  const CustomTextFormField({super.key, this.suffix, required this.data, this.controller});
+  final void Function(String)? onChanged;
+  
+  const CustomTextFormField({super.key, this.suffix, required this.data, this.controller, this.onChanged});
 
+  @override
+  State<CustomTextFormField> createState() => _CustomTextFormFieldState();
+}
+
+class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      
+      onChanged: widget.onChanged ,
       onTapOutside: (v) {
         FocusScope.of(context).unfocus();
       },
-      controller:controller ,
+      controller:widget.controller ,
       decoration: InputDecoration(
-        label:Text(data.tr()),
+        label:Text(widget.data.tr()),
         filled: true,
         fillColor: Color(0xffE8ECF4),
         labelStyle: TextStyle(
-          fontSize: 15.sp,
+          fontSize: 18.sp,
           color: Color(0xff8391A1)
         ),
         suffixIcon: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: suffix,
+          child: widget.suffix,
         ),
         enabledBorder:OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
+          
           borderSide: BorderSide(
             width: 0
           )

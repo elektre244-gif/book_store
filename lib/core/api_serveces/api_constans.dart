@@ -3,4 +3,8 @@ class ApiConstans{
   static const String login="login";
   static const String rigester="register";
   static const String slider="sliders";
+  static const String product="products";
+  static const String productsBestSeller="products-bestseller";
+  static const String search="products-search";
+  static const String profile="profile";
 }

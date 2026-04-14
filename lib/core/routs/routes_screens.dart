@@ -7,4 +7,8 @@ class RoutesScreens {
   static const String otpScreen="otpScreen";
   static const String passwordSuccessScreen="passwordSuccessScreen";
   static const String bottomNavBar="BottomNavBar";
+  static const String searchScrean="searchScrean";
+  static const String updatProfile="updatProfile";
+  static const String newPassword="newPassword";
+  static const String myOrders="myOrders";
 }

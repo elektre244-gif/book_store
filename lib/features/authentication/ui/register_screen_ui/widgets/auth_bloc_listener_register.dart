@@ -17,30 +17,28 @@ class AuthBlocListenerRegister extends StatelessWidget {
     return   BlocListener<AuthenticationCubit, AuthenticationState>(
                   listener: (context, state) {
                     if (state is AuthenticationLoadingState) {
-                      showDialog(
-                        context: context,
-                        builder: (context) => Center(
-                          child: CircularProgressIndicator(
-                            color: AppConstans.primaryColor,
-                          ),
-                        ),
-                      );
-                    } else if (state is AuthenticationSuccessesState) {
-                      Navigator.pushNamedAndRemoveUntil(
-                        context,
-                        RoutesScreens.bottomNavBar,
-                        (route) => false,
-                      );
-                    } else if (state is AuthenticationErorState) {
-                      Navigator.pop(context);
-                      showDialog(
-                        context: context,
-                        builder: (context) => AlertDialog(
-                          title: Text("Error"),
-                          content: Text("Error Please try again"),
-                        ),
-                      );
-                    }
+          showDialog(
+            context: context,
+            builder: (context) => Center(
+              child: CircularProgressIndicator(color: AppConstans.primaryColor),
+            ),
+          );
+        } else if (state is AuthenticationSuccessesState) {
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            RoutesScreens.bottomNavBar,
+            (route)=>false,
+          );
+        } else if (state is AuthenticationErorState) {
+          Navigator.pop(context);
+          showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+              title: Text("Error"),
+              content: Text("Error Please try again"),
+            ),
+          );
+        }
                   },
                   child: AppBottom(
                     data: "Register",

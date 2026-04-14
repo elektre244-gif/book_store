@@ -1,21 +1,35 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/home/cubit/cubit/home_slider_cubit.dart';
 import 'package:flutter_application_1/features/home/ui/widgets/costom_home_appBar.dart';
+import 'package:flutter_application_1/features/home/ui/widgets/home_best_book_item.dart';
 import 'package:flutter_application_1/features/home/ui/widgets/home_slider.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child:Column(
-        children: [
-          CostomHomeAppbar(),
-
-          HomeSlider()
-        ],
-      )
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CostomHomeAppbar(),
+            HomeSlider(),
+            SizedBox(height: 31),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 13.w),
+              child: Text(
+                "Best Seller".tr(),
+                style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.bold),
+              ),
+            ),
+            SizedBox(height: 15.h),
+            HomeBestBookItem(),
+          ],
+        ),
+      ),
     );
   }
 }

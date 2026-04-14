@@ -24,7 +24,7 @@ class BookStore extends StatelessWidget {
       supportedLocales: context.supportedLocales,
       locale: context.locale,
       onGenerateRoute: AppRoutes().onGenerateRoute,
-        home: BottomNavigatinBarScreens()),
+        home :WelcomScreen()),
     );
   }
 

@@ -1,26 +1,32 @@
 import 'package:flutter_application_1/core/api_serveces/api_constans.dart';
 import 'package:flutter_application_1/core/api_serveces/dio_helper.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthenticationRepo {
-  static login({required String email, required String password}) async {
+  static Future<Map<String, dynamic>?> login({
+    required String email,
+    required String password,
+  }) async {
     try {
       final response = await DioHelper.dio?.post(
         ApiConstans.login,
         data: {"email": email, "password": password},
       );
-      if (response?.statusCode == 200||response?.statusCode==201) {
-        savedUserToken(token: response?.data["token"]);
-        return true;
-      } else {
-        return false;
+
+      if (response != null && response.data != null) {
+        final Map<String, dynamic> data = Map<String, dynamic>.from(
+          response.data,
+        );
+        return data;
       }
+
+      return null;
     } catch (e) {
-      return false;
+      print("ERROR: $e");
+      return null;
     }
   }
 
-  static register({
+  static Future<Map<String, dynamic>?> register({
     required String name,
     required String email,
     required String password,
@@ -36,21 +42,17 @@ class AuthenticationRepo {
           "password_confirmation": passwordConfirmation,
         },
       );
-      if (registerResponse?.statusCode == 200 ||
-          registerResponse?.statusCode == 201) {
-        savedUserToken(token: registerResponse?.data["token"]);
-        return true;
-      } else {
-        return false;
+      if (registerResponse != null && registerResponse.data != null) {
+        final Map<String, dynamic> data = Map<String, dynamic>.from(
+          registerResponse.data,
+        );
+        return data;
       }
-    } catch (e) {
-      return false;
-    }
-  }
 
-  static Future<void> savedUserToken({required String token}) async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString('Token', token);
-    print("token is saved");
+      return null;
+    } catch (e) {
+      print("ERROR: $e");
+      return null;
+    }
   }
 }
