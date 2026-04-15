@@ -10,13 +10,14 @@ import 'package:flutter_application_1/features/authentication/ui/password_succes
 import 'package:flutter_application_1/features/authentication/ui/register_screen_ui/register_auth_screen.dart';
 import 'package:flutter_application_1/features/bottom_navigation_bar/ui/bottom_navigatin_bar_screens.dart';
 import 'package:flutter_application_1/features/my_orders/ui/my_orders.dart';
+import 'package:flutter_application_1/features/new_password/cubit/cubit/new_password_cubit.dart';
 import 'package:flutter_application_1/features/new_password/ui/new_password_screen.dart';
 import 'package:flutter_application_1/features/search/cubit/cubit/search_cubit.dart';
 import 'package:flutter_application_1/features/search/ui/search_screen.dart';
+import 'package:flutter_application_1/features/update_profile/cubit/cubit/updat_profile_cubit.dart';
 import 'package:flutter_application_1/features/update_profile/ui/updat_profile_screen.dart';
 import 'package:flutter_application_1/features/welcome/ui/welcom-screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 
 class AppRoutes {
   Route? onGenerateRoute(RouteSettings settings) {
@@ -46,13 +47,23 @@ class AppRoutes {
       case RoutesScreens.otpScreen:
         return MaterialPageRoute(builder: (_) => OtpScreen());
       case RoutesScreens.updatProfile:
-        return MaterialPageRoute(builder: (_) => UpdatProfileScreen());
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => UpdatProfileCubit(),
+            child: UpdatProfileScreen(),
+          ),
+        );
       case RoutesScreens.bottomNavBar:
         return MaterialPageRoute(builder: (_) => BottomNavigatinBarScreens());
       case RoutesScreens.myOrders:
         return MaterialPageRoute(builder: (_) => MyOrders());
       case RoutesScreens.newPassword:
-        return MaterialPageRoute(builder: (_) => NewPasswordScreen());
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => NewPasswordCubit(),
+            child: NewPasswordScreen(),
+          ),
+        );
       case RoutesScreens.searchScrean:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(

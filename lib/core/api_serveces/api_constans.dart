@@ -7,4 +7,6 @@ class ApiConstans{
   static const String productsBestSeller="products-bestseller";
   static const String search="products-search";
   static const String profile="profile";
+  static const String updateprofile="update-profile";
+  static const String changePassword="update-password";
 }

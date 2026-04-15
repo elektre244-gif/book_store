@@ -3,11 +3,27 @@ import 'package:flutter_application_1/core/them/app_constans.dart';
 import 'package:flutter_application_1/core/widgets/app_bottom.dart';
 import 'package:flutter_application_1/core/widgets/custom_text_field.dart';
 import 'package:flutter_application_1/core/widgets/custom_text_form_field.dart';
+import 'package:flutter_application_1/features/update_profile/ui/widgets/custom_updat_bottom.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomUserInformation extends StatelessWidget {
-  const CustomUserInformation({super.key});
+class CustomUserInformation extends StatefulWidget {
 
+   CustomUserInformation({super.key});
+
+  @override
+  State<CustomUserInformation> createState() => _CustomUserInformationState();
+}
+
+class _CustomUserInformationState extends State<CustomUserInformation> {
+  var nameController =TextEditingController();
+  var phoneController =TextEditingController();
+  var addressController =TextEditingController();
+void dispose() {
+    nameController.dispose();
+    phoneController.dispose();
+    addressController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -30,14 +46,13 @@ class CustomUserInformation extends StatelessWidget {
             ],
           ),
           SizedBox(height: 60.h,),
-             CustomTextFormField(data: 'Name'),
+             CustomTextFormField(data: 'Name',controller: nameController,),
              SizedBox(height: 10.h,),
-             CustomTextField(data: 'Phone'),
+             CustomTextField(data: 'Phone',controller: phoneController,),
             SizedBox(height: 10.h,),
-             CustomTextFormField(data: 'Address'),
-           SizedBox(height: 180.h,),
-             AppBottom(data: 'Update Profile', bottmColor: AppConstans.primaryColor, textColor: AppConstans.secondColor)
-
+             CustomTextFormField(data: 'Address',controller: addressController,),
+           SizedBox(height: 150.h,),
+              CustomUpdatBottom(name: nameController,phone: phoneController, address: addressController,)
                ],
              );
   }

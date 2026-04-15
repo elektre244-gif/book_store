@@ -4,11 +4,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextField extends StatelessWidget {
   final String data;
-  const CustomTextField({super.key, required this.data});
+final TextEditingController? controller;
+final String? Function(String?)? validator;
+  const CustomTextField({super.key, required this.data, this.controller, this.validator});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: validator,
+      controller:controller ,
       keyboardType: TextInputType.numberWithOptions(),
       onTapOutside: (v) {
         FocusScope.of(context).unfocus();

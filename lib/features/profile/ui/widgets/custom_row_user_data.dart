@@ -4,9 +4,14 @@ import 'package:flutter_application_1/features/profile/cubit/cubit/profile_cubit
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomRowUserData extends StatelessWidget {
+class CustomRowUserData extends StatefulWidget {
   const CustomRowUserData({super.key});
 
+  @override
+  State<CustomRowUserData> createState() => _CustomRowUserDataState();
+}
+
+class _CustomRowUserDataState extends State<CustomRowUserData> {
   @override
   Widget build(BuildContext context) {
   return BlocBuilder<ProfileCubit, ProfileState>(
@@ -40,7 +45,7 @@ class CustomRowUserData extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+          Text(
                 state.profile.name,
                 style: TextStyle(
                   fontSize: 20.sp,

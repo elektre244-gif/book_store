@@ -7,8 +7,8 @@ class CustomTextFormField extends StatefulWidget {
   final   String data;
   final TextEditingController? controller;
   final void Function(String)? onChanged;
-  
-  const CustomTextFormField({super.key, this.suffix, required this.data, this.controller, this.onChanged});
+  final  String? Function(String?)? validator;
+  const CustomTextFormField({super.key, this.suffix, required this.data, this.controller, this.onChanged, this.validator});
 
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
@@ -18,7 +18,6 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      
       onChanged: widget.onChanged ,
       onTapOutside: (v) {
         FocusScope.of(context).unfocus();
