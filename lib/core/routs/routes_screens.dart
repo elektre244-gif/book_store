@@ -11,4 +11,6 @@ class RoutesScreens {
   static const String updatProfile="updatProfile";
   static const String newPassword="newPassword";
   static const String myOrders="myOrders";
+  static const String placeYourOrder="placeYourOrder";
+  static const String successScreen="successScreen";
 }

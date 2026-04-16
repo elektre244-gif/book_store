@@ -12,8 +12,10 @@ import 'package:flutter_application_1/features/bottom_navigation_bar/ui/bottom_n
 import 'package:flutter_application_1/features/my_orders/ui/my_orders.dart';
 import 'package:flutter_application_1/features/new_password/cubit/cubit/new_password_cubit.dart';
 import 'package:flutter_application_1/features/new_password/ui/new_password_screen.dart';
+import 'package:flutter_application_1/features/place_your_order/ui/place_your_order_screen.dart';
 import 'package:flutter_application_1/features/search/cubit/cubit/search_cubit.dart';
 import 'package:flutter_application_1/features/search/ui/search_screen.dart';
+import 'package:flutter_application_1/features/success_order_screen/ui/success_order_screen.dart';
 import 'package:flutter_application_1/features/update_profile/cubit/cubit/updat_profile_cubit.dart';
 import 'package:flutter_application_1/features/update_profile/ui/updat_profile_screen.dart';
 import 'package:flutter_application_1/features/welcome/ui/welcom-screen.dart';
@@ -55,6 +57,10 @@ class AppRoutes {
         );
       case RoutesScreens.bottomNavBar:
         return MaterialPageRoute(builder: (_) => BottomNavigatinBarScreens());
+      case RoutesScreens.placeYourOrder:
+        return MaterialPageRoute(builder: (_) => PlaceYourOrderScreen());
+      case RoutesScreens.successScreen:
+        return MaterialPageRoute(builder: (_) => SuccessOrderScreen());
       case RoutesScreens.myOrders:
         return MaterialPageRoute(builder: (_) => MyOrders());
       case RoutesScreens.newPassword:

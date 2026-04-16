@@ -5,10 +5,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class CustomTextFormField extends StatefulWidget {
   final Widget? suffix;
   final   String data;
+  final bool readOnly ;
   final TextEditingController? controller;
   final void Function(String)? onChanged;
   final  String? Function(String?)? validator;
-  const CustomTextFormField({super.key, this.suffix, required this.data, this.controller, this.onChanged, this.validator});
+  const CustomTextFormField({super.key, this.suffix, required this.data, this.controller, this.onChanged, this.validator, this.readOnly=false});
 
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
@@ -18,6 +19,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      readOnly: widget.readOnly,
       onChanged: widget.onChanged ,
       onTapOutside: (v) {
         FocusScope.of(context).unfocus();

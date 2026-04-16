@@ -1,12 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/core/them/app_constans.dart';
-import 'package:flutter_application_1/core/widgets/app_bottom.dart';
-import 'package:flutter_application_1/core/widgets/custom_text_form_field.dart';
-import 'package:flutter_application_1/features/new_password/cubit/cubit/new_password_cubit.dart';
 import 'package:flutter_application_1/features/new_password/ui/widgets/custom_creat_new_password.dart';
-import 'package:flutter_application_1/features/new_password/ui/widgets/custom_new_password_app_bar.dart';
-import 'package:flutter_application_1/features/profile/cubit/cubit/profile_cubit.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NewPasswordScreen extends StatefulWidget {

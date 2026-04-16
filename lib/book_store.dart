@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/routs/app_routes.dart';
 import 'package:flutter_application_1/core/them/app_constans.dart';
 import 'package:flutter_application_1/features/bottom_navigation_bar/ui/bottom_navigatin_bar_screens.dart';
+import 'package:flutter_application_1/features/place_your_order/ui/place_your_order_screen.dart';
 import 'package:flutter_application_1/features/welcome/ui/welcom-screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -24,7 +25,7 @@ class BookStore extends StatelessWidget {
       supportedLocales: context.supportedLocales,
       locale: context.locale,
       onGenerateRoute: AppRoutes().onGenerateRoute,
-        home :WelcomScreen()),
+        home :PlaceYourOrderScreen()),
     );
   }
 
