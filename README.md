@@ -31,3 +31,4 @@ samples, guidance on mobile development, and a full API reference.
 ![Image Alt](https://github.com/elektre244-gif/book_store/blob/13936c3898b3de0f495f4ec20f53a32a785cca6f/Screenshot%202026-04-15%20004427.png)
 ![Image Alt](https://github.com/elektre244-gif/book_store/blob/1837c74487aa50f7d748c464402edba8215c5039/Screenshot%202026-04-15%20004414.png)
 ![Image Alt](https://github.com/elektre244-gif/book_store/blob/47187c3e8394226289653d5e390489091ba64a13/Screenshot%202026-04-17%20005438.png)
+![Image Alt](https://github.com/elektre244-gif/book_store/blob/3bd3a93f7ee88977db6777a4a2e497bd199a3bb2/Screenshot%202026-04-17%20005426.png)
