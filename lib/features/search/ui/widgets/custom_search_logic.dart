@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/them/app_constans.dart';
-import 'package:flutter_application_1/features/home/ui/widgets/costom_card_item.dart';
+import 'package:flutter_application_1/core/widgets/costom_card_item.dart';
 import 'package:flutter_application_1/features/search/cubit/cubit/search_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

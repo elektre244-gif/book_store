@@ -1,8 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/home/ui/widgets/costom_home_appBar.dart';
-import 'package:flutter_application_1/features/home/ui/widgets/home_best_book_item.dart';
-import 'package:flutter_application_1/features/home/ui/widgets/home_slider.dart';
+import 'package:flutter_application_1/features/home/ui/home_screen/widgets/costom_home_appBar.dart';
+import 'package:flutter_application_1/features/home/ui/home_screen/widgets/home_best_book_item.dart';
+import 'package:flutter_application_1/features/home/ui/home_screen/widgets/home_slider.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreen extends StatelessWidget {

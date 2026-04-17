@@ -13,4 +13,5 @@ class RoutesScreens {
   static const String myOrders="myOrders";
   static const String placeYourOrder="placeYourOrder";
   static const String successScreen="successScreen";
+  static const String detailes="detailes";
 }

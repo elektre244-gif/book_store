@@ -9,6 +9,9 @@ import 'package:flutter_application_1/features/authentication/ui/password_succes
 
 import 'package:flutter_application_1/features/authentication/ui/register_screen_ui/register_auth_screen.dart';
 import 'package:flutter_application_1/features/bottom_navigation_bar/ui/bottom_navigatin_bar_screens.dart';
+import 'package:flutter_application_1/features/home/cubit/cubit/home_slider_cubit.dart';
+import 'package:flutter_application_1/features/home/data/models/best_seller_respons.dart';
+import 'package:flutter_application_1/features/home/ui/details_screen/details_screen.dart';
 import 'package:flutter_application_1/features/my_orders/ui/my_orders.dart';
 import 'package:flutter_application_1/features/new_password/cubit/cubit/new_password_cubit.dart';
 import 'package:flutter_application_1/features/new_password/ui/new_password_screen.dart';
@@ -63,6 +66,13 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => SuccessOrderScreen());
       case RoutesScreens.myOrders:
         return MaterialPageRoute(builder: (_) => MyOrders());
+      case RoutesScreens.detailes:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => HomeSliderCubit(),
+            child: DetailsScreen(),
+          ),
+        );
       case RoutesScreens.newPassword:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/core/routs/routes_screens.dart';
 import 'package:flutter_application_1/core/them/app_constans.dart';
 import 'package:flutter_application_1/features/home/cubit/cubit/home_slider_cubit.dart';
-import 'package:flutter_application_1/features/home/ui/widgets/costom_card_item.dart';
+import 'package:flutter_application_1/core/widgets/costom_card_item.dart';
+import 'package:flutter_application_1/features/home/data/models/best_seller_respons.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skeletonizer/skeletonizer.dart';
@@ -17,12 +19,12 @@ class HomeBestBookItem extends StatelessWidget {
           current is SuccessBestProductState ||
           current is ErrorBestProductState,
       builder: (context, state) {
+        
         if (state is SliderLoadingState) {
           return Center(
             child: Skeletonizer(
               enabled: true,
               child: GridView.builder(
-                
                 physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 itemCount: 6,
@@ -34,31 +36,49 @@ class HomeBestBookItem extends StatelessWidget {
                 ),
                 itemBuilder: (context, index) {
                   return CostomCardItem(
-                    background:AppConstans.gray ,
+                    background: AppConstans.gray,
                   );
                 },
               ),
             ),
           );
-        } else if (state is SuccessBestProductState) {
-          return GridView.builder(
-             shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-            itemCount: state.product?.length,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 10.w,
-              mainAxisSpacing: 10.h,
-              childAspectRatio: 0.62,
-            ),
-            itemBuilder: (context, index) {
-              return CostomCardItem(product: state.product?[index]);
-            },
+        } 
+        
+     else if (state is SuccessBestProductState) {
+  final products = state.product ?? [];
+
+  return GridView.builder(
+    shrinkWrap: true,
+    physics: const NeverScrollableScrollPhysics(),
+    itemCount: products.length,
+    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      crossAxisCount: 2,
+      crossAxisSpacing: 10.w,
+      mainAxisSpacing: 10.h,
+      childAspectRatio: 0.62,
+    ),
+    itemBuilder: (context, index) {
+      final product = products[index];
+
+      return CostomCardItem(
+        product: product,
+        onTap: () {
+          Navigator.pushNamed(
+            context,
+            RoutesScreens.detailes,
+            arguments: product,
           );
-        } else if (state is ErrorBestProductState) {
+        },
+      );
+    },
+  );
+}
+        
+        else if (state is ErrorBestProductState) {
           return Center(child: Text("Error"));
         }
-        return SizedBox();
+
+        return const SizedBox();
       },
     );
   }

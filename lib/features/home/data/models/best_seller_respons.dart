@@ -22,7 +22,7 @@ class BestSellerResponse {
   }
 }
 
-// =======================
+
 
 class BestSellerData {
   List<Product>? products;

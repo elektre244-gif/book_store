@@ -9,4 +9,5 @@ class ApiConstans{
   static const String profile="profile";
   static const String updateprofile="update-profile";
   static const String changePassword="update-password";
+  static const String addtowishlist="add-to-wishlist";
 }
