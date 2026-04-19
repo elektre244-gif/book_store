@@ -1,19 +1,49 @@
-# flutter_application_1
+# 📚 Bookia App
+Bookia هو تطبيق موبايل مبني باستخدام Flutter، بيهدف لتوفير تجربة سهلة وسريعة لشراء الكتب أونلاين، مع واجهة مستخدم بسيطة وأداء عالي.
 
-A new Flutter project.
+## Features
 
-## Getting Started
+1️⃣ 🔍 تصفح الكتب بسهولة
+2️⃣ 📖 عرض تفاصيل كل كتاب (الوصف - السعر - الصورة)
+3️⃣ ❤️ إضافة الكتب إلى الـ Wishlist
+4️⃣ 🛒 إدارة سلة المشتريات
+5️⃣ 🔐 تسجيل الدخول وإنشاء حساب
+6️⃣⚡ أداء سريع باستخدام API
+7️⃣ 📱 تصميم متجاوب مع جميع الشاشات
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+### Tech Stack
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1️⃣ Flutter (UI Development)
+2️⃣ Dart
+3️⃣ Cubit / Bloc (State Management)
+4️⃣ Dio (API Integration)
+5️⃣ RESTful APIs
+6️⃣ Shared Preferences (Local Storage)
+7️⃣ Localization (English,Arabic)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+### 📂Project Structure
+lib/
+│
+├── core/
+│   ├── api_services/
+│   ├── AppConstans/
+│   ├── Them/
+│   ├── routs/
+    ├── Widgets/
+│
+├── features/
+│   ├── auth/
+│   ├── home/
+│   ├── wishlist/
+│   ├── cart/
+│
+├── Bookia App/
+├── main/
+
+### 📸 Screenshots
+
 ![Image Alt](https://github.com/elektre244-gif/book_store/blob/08c0220f432f83391cce13d4e16d4c8d3f881e9f/Screenshot%202026-03-05%20020842.png)
 ![Image Alt](https://github.com/elektre244-gif/book_store/blob/87c16c46d78be5fc3ecd6ae8700545d60f627bbe/Screenshot%202026-03-05%20020904.png)
 ![Image Alt](https://github.com/elektre244-gif/book_store/blob/0b60633751aa6986f64adf73160d26abcdff7180/Screenshot%202026-03-05%20021342.png)
@@ -33,3 +63,15 @@ samples, guidance on mobile development, and a full API reference.
 ![Image Alt](https://github.com/elektre244-gif/book_store/blob/47187c3e8394226289653d5e390489091ba64a13/Screenshot%202026-04-17%20005438.png)
 ![Image Alt](https://github.com/elektre244-gif/book_store/blob/3bd3a93f7ee88977db6777a4a2e497bd199a3bb2/Screenshot%202026-04-17%20005426.png)
 ![Image Alt](https://github.com/elektre244-gif/book_store/blob/638bfd9e5eb8717c2a98aa34ef759212b591a31f/Screenshot%202026-04-17%20005458.png)
+
+### 👨‍💻 Author
+
+Mohamed Zakarea
+Flutter Developer
+
+#### 📌 Notes
+المشروع معمول بغرض التعلم والتطوير
+قابل للتطوير وإضافة Features جديدة بسهولة
+
+
+

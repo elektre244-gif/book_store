@@ -67,12 +67,11 @@ class AppRoutes {
       case RoutesScreens.myOrders:
         return MaterialPageRoute(builder: (_) => MyOrders());
       case RoutesScreens.detailes:
-        return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => HomeSliderCubit(),
-            child: DetailsScreen(),
-          ),
-        );
+        final product = settings.arguments as Product;
+
+  return MaterialPageRoute(
+    builder: (_) => DetailsScreen(product: product),
+  );
       case RoutesScreens.newPassword:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(

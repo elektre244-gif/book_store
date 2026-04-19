@@ -9,7 +9,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class HomeBestBookItem extends StatelessWidget {
-  const HomeBestBookItem({super.key});
+  final Product product;
+  const HomeBestBookItem({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +46,7 @@ class HomeBestBookItem extends StatelessWidget {
         } 
         
      else if (state is SuccessBestProductState) {
-  final products = state.product ?? [];
+  final products = state.product?? [];
 
   return GridView.builder(
     shrinkWrap: true,

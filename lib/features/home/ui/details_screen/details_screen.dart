@@ -3,90 +3,43 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/them/app_constans.dart';
 import 'package:flutter_application_1/core/widgets/custom_appbar_icon.dart';
 import 'package:flutter_application_1/core/widgets/custom_text.dart';
-import 'package:flutter_application_1/features/home/cubit/cubit/home_slider_cubit.dart';
+import 'package:flutter_application_1/features/home/ui/details_screen/widgets/custom_details_desien.dart';
+import 'package:flutter_application_1/features/home/ui/details_screen/widgets/custom_favoriet_icon_bottom.dart';
 import 'package:flutter_application_1/features/home/data/models/best_seller_respons.dart';
+import 'package:flutter_application_1/features/wish_list/cubit/cubit/wish_list_cubit.dart';
+import 'package:flutter_application_1/features/wish_list/data/repo/wish_list_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DetailsScreen extends StatelessWidget {
-  final Product? product;
-  const DetailsScreen({super.key,  this.product});
+  final Product product;
+
+  const DetailsScreen({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
- 
-
     return Scaffold(
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-          child: BlocBuilder<HomeSliderCubit, HomeSliderState>(
-            builder: (context, state) {
-              return Column(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
                 children: [
-                  Row(
-                    children: [
-                      CustomAppbarIcon(),
-                      Spacer(),
-                      Icon(Icons.book_outlined),
-                    ],
-                  ),
-                  SizedBox(height: 30.h),
-                  Container(
-                    height: 271.h,
-                    width: 183.w,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: CachedNetworkImage(
-                      imageUrl: product?.image ?? "",
-                      placeholder: (context, url) =>
-                          CircularProgressIndicator(),
-                      errorWidget: (context, url, error) => Icon(Icons.error),
-                    ),
-                  ),
-                  SizedBox(height: 11.h),
-                  CustomText(
-                    data: product?.name ?? "",
-                    fontSize: 25,
-                    color: Colors.black,
-                  ),
-                  SizedBox(height: 20.h),
-                  CustomText(
-                    textAlign: TextAlign.center,
-                    data: product?.description ?? "",
-                    fontSize: 15,
-                    color: Colors.grey,
-                  ),
-                  SizedBox(height: 20.h),
-                  Row(
-                    children: [
-                      CustomText(
-                        data: product?.price ?? "",
-                        fontSize: 25,
-                        color: Colors.black,
-                      ),
-                      Spacer(),
-                      Container(
-                        height: 56.h,
-                        width: 212.w,
-                        decoration: BoxDecoration(
-                          color: AppConstans.blackColor,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: Center(
-                          child: CustomText(
-                            data: "Add To Cart",
-                            fontSize: 20,
-                            color: AppConstans.secondColor,
-                          ),
-                        ),
-                      ),
-                    ],
+                  CustomAppbarIcon(),
+                  Spacer(),
+                  BlocProvider(
+                    create: (context) => WishlistCubit(),
+                    child: CustomFavorietIconBottom(product: product),
                   ),
                 ],
-              );
-            },
+              ),
+              SizedBox(height: 31),
+
+              Center(
+                child:CustomDetailsDesien(product: product)),
+            ],
           ),
         ),
       ),

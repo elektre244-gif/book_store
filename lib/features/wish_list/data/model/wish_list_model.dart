@@ -1,38 +1,50 @@
-class WishlistModel {
-  final WishlistData data;
-  final String message;
-  final int status;
+class WishlistProductModel {
+  final int id;
+  final String name;
+  final String price;
+  final String image;
 
-  WishlistModel({
-    required this.data,
-    required this.message,
-    required this.status,
-  });
+  WishlistProductModel({required this.id, required this.name, required this.price, required this.image});
 
-  factory WishlistModel.fromJson(Map<String, dynamic> json) {
-    return WishlistModel(
-      data: WishlistData.fromJson(json['data']),
-      message: json['message'],
-      status: json['status'],
+  factory WishlistProductModel.fromJson(Map<String, dynamic> json) {
+    return WishlistProductModel(
+      id: json['id'],
+      name: json['name'],
+      price: json['price'].toString(),
+      image: json['image'] ?? '',
     );
   }
 }
-class WishlistData {
+class WishlistResponseModel {
+  final int status;
+  final String message;
+  final List<WishlistProductModel> products;
   final int currentPage;
-  final List<dynamic> items;
-  final int total;
+  final int lastPage;
 
-  WishlistData({
+  WishlistResponseModel({
+    required this.status,
+    required this.message,
+    required this.products,
     required this.currentPage,
-    required this.items,
-    required this.total,
+    required this.lastPage,
   });
 
-  factory WishlistData.fromJson(Map<String, dynamic> json) {
-    return WishlistData(
-      currentPage: json['current_page'],
-      items: json['data'], // 👈 المنتجات هنا
-      total: json['total'],
+  factory WishlistResponseModel.fromJson(Map<String, dynamic> json) {
+    // بنجيب الـ Object اللي اسمه data الأول
+    var nestedData = json['data'];
+    
+    // بنحول الـ List اللي جوه الـ data لـ Models
+    var list = nestedData['data'] as List;
+    List<WishlistProductModel> productList = 
+        list.map((i) => WishlistProductModel.fromJson(i)).toList();
+
+    return WishlistResponseModel(
+      status: json['status'],
+      message: json['message'],
+      products: productList,
+      currentPage: nestedData['current_page'],
+      lastPage: nestedData['last_page'],
     );
   }
 }

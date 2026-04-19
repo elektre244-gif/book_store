@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/features/home/data/models/best_seller_respons.dart';
 import 'package:flutter_application_1/features/home/ui/home_screen/widgets/costom_home_appBar.dart';
 import 'package:flutter_application_1/features/home/ui/home_screen/widgets/home_best_book_item.dart';
 import 'package:flutter_application_1/features/home/ui/home_screen/widgets/home_slider.dart';
@@ -27,7 +28,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 15.h),
-            HomeBestBookItem(),
+            HomeBestBookItem(product:Product()),
           ],
         ),
       ),

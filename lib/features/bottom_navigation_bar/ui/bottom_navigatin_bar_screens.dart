@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/them/app_constans.dart';
 import 'package:flutter_application_1/features/authentication/cubit/authentication_cubit.dart';
 import 'package:flutter_application_1/features/home/cubit/cubit/home_slider_cubit.dart';
+import 'package:flutter_application_1/features/home/data/models/best_seller_respons.dart';
 import 'package:flutter_application_1/features/home/ui/home_screen/home_screen.dart';
 import 'package:flutter_application_1/features/my_cart_screen/my_cart_screen.dart';
 import 'package:flutter_application_1/features/profile/cubit/cubit/profile_cubit.dart';
@@ -12,7 +13,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BottomNavigatinBarScreens extends StatefulWidget {
-  const BottomNavigatinBarScreens({super.key});
+  final Product? product;
+  final token = AppConstans.token;
+  BottomNavigatinBarScreens({super.key, this.product});
 
   @override
   State<BottomNavigatinBarScreens> createState() =>
@@ -28,7 +31,10 @@ class _BottomNavigatinBarScreensState extends State<BottomNavigatinBarScreens> {
         ..getProduocts(),
       child: HomeScreen(),
     ),
-    BlocProvider(create: (context) => WishListCubit(), child: WishListScreen()),
+    BlocProvider(
+      create: (context) => WishlistCubit()..getproducts(productId: 2, token: AppConstans.token??""),
+      child: WishlistScreen(),
+    ),
     MyCartScreen(),
     BlocProvider(
       create: (context) => ProfileCubit()..getProfileData(),

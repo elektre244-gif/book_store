@@ -18,9 +18,6 @@ class HomeRepo{
  return null;
   }
   }
-
-
-
   static Future<BestSellerResponse?>? getProdouct()async{
     try{
      final bestSellerProductsResponse=await DioHelper.dio?.get(ApiConstans.productsBestSeller);

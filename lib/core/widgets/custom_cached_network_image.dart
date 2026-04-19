@@ -7,7 +7,7 @@ class CustomCachedNetworkImage extends StatelessWidget {
  final double height;
  final double width;
 
-  const CustomCachedNetworkImage({super.key, required this.imageUrl, this.height=100, this.width=50});
+  const CustomCachedNetworkImage({super.key, required this.imageUrl, this.height=100, this.width=50, String? url});
 
   @override
   Widget build(BuildContext context) {
