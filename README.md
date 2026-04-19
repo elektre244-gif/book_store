@@ -24,7 +24,7 @@ Bookia هو تطبيق موبايل مبني باستخدام Flutter، بيهد
 
 
 ### 📂Project Structure
-lib/
+"""lib/
 │
 ├── core/
 │   ├── api_services/
@@ -41,7 +41,7 @@ lib/
 │
 ├── Bookia App/
 ├── main/
-
+"""
 ### 📸 Screenshots
 
 ![Image Alt](https://github.com/elektre244-gif/book_store/blob/08c0220f432f83391cce13d4e16d4c8d3f881e9f/Screenshot%202026-03-05%20020842.png)
