@@ -64,6 +64,7 @@ lib/
 ![Image Alt](https://github.com/elektre244-gif/book_store/blob/3bd3a93f7ee88977db6777a4a2e497bd199a3bb2/Screenshot%202026-04-17%20005426.png)
 ![Image Alt](https://github.com/elektre244-gif/book_store/blob/638bfd9e5eb8717c2a98aa34ef759212b591a31f/Screenshot%202026-04-17%20005458.png)
 ![Image Alt](https://github.com/elektre244-gif/book_store/blob/52ac113081fcc704a37fa822ebe65ecca2dd4cb5/Screenshot%202026-04-19%20210928.png)
+![Image Alt](https://github.com/elektre244-gif/book_store/blob/76fef91e98ff8a899ea62c3f5f3f7d43919beb1e/Screenshot%202026-04-19%20214807.png)
 
 ### 👨‍💻 Author
 
